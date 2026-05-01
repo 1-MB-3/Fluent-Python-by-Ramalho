@@ -32,7 +32,6 @@ class Card:     #case in which we want to get one value (combined rank and suit)
         self.suit = suit
         self.rank = rank
 
-
     def __repr__(self):
         return self.rank + self.suit
 
