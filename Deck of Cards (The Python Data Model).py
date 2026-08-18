@@ -1,31 +1,31 @@
-class Deck:     #class, which we will be using throught this code
+class Deck:
 
-    def __init__(self):     #adding values to cards
+    def __init__(self):
 
-        self.cards = []       #using cards from Deck
+        self.cards = []
 
-        from itertools import product       #itertools is like pair in C++
+        from itertools import product
 
         suits = ["♠", "♥", "♦", "♣"]
         ranks = ["A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"]
 
         for rank, suit in product(ranks, suits):
 
-            self.cards.append(Card(rank, suit))     #adding all values
+            self.cards.append(Card(rank, suit))
 
-    def __len__(self):      #returning length of cards
+    def __len__(self):
 
         return len(self.cards)
     
-    def __getitem__(self, i):       #returning values for i cell
+    def __getitem__(self, i):
 
         return self.cards[i]
     
-    def __setitem__(self, i, value):    #setting values for cards
+    def __setitem__(self, i, value):
 
         self.cards[i] = value
 
-class Card:     #case in which we want to get one value (combined rank and suit) in our output
+class Card:
 
     def __init__(self, rank, suit):
 
@@ -36,19 +36,19 @@ class Card:     #case in which we want to get one value (combined rank and suit)
         return self.rank + self.suit
 
 
-deck=Deck()     #acessing our class and assigning it to variable
+deck=Deck()
 
-print(len(deck))        #it works, because we use len dunder in the Deck class
+print(len(deck))
 
-for cards in deck:      #it works, because for checks till IndexError, so it will check every cell till it finds it
+for cards in deck:
     print(cards)
 
-print(deck[5:10])       #checking from deck[5] till deck[9]
+print(deck[5:10])
 
 import random  
-random.shuffle(deck)        #shuffling deck
+random.shuffle(deck)
 
-print(deck[5:10])       #checking if shuffle worked
+print(deck[5:10])
 
-print(random.choice(deck))      #picking random card
+print(random.choice(deck))
 
